@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>..:: Drawing App ::..</title>
+    <script src="js/app.js"></script>
+</head>
+<body onload="getPenProp()">
+    <div id="toolbar">
+        <table width="600px">
+            <tr>
+                <td>
+                    <span>Pen Thickness : <span id="penThicknessValue">1</span></span><br>
+                    <input type="range" name="penThickness" id="penThickness" value="1" min="1" max="30" onchange="getPenProp()">
+                </td>
+                <td>
+                    <span >Pen Color : <span id="penColorValue"></span></span><br>
+                    <input type="color" name="penColor" id="penColor" onchange="getPenProp()">
+                </td>
+                <td>
+                    <input id="btn" type="button" value="Clear" onclick="canvasClear()">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="canvas" onmousedown="draw(1)" onmousemove="draw(2)" onmouseup="draw(3)"></div>
+</body>
+</html>
